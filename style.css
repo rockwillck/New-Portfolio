@@ -1,0 +1,151 @@
+@font-face {
+    font-family: Josefin-Sans;
+    src: url(fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Josefin-Sans;
+    font-size: 5vmin;
+    color:white;
+}
+
+h1 {
+    background: linear-gradient(to bottom right, blue, purple, rgb(255, 0, 85));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12vmin;
+    text-transform: uppercase;
+}
+h2 {
+    text-decoration: underline;
+}
+.heading {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    border:solid;
+    border-color: white;
+    padding:5vmin;
+    border-width: 3px;
+}
+.scrollButton {
+    background-color: transparent;
+    border:none;
+    color:white;
+    font-family: Josefin-Sans;
+    font-size: 2vmin;
+    transition: 0.2s;
+    text-transform: uppercase;
+    border:solid;
+    border-color: white;
+    padding:2vmin;
+    border-width: 3px;
+}
+.scrollButton:hover {
+    background-color: white;
+    color:black;
+}
+.scrollButton:active {
+    background-color: white;
+    padding:3vmin;
+}
+.content {
+    position:absolute;
+    left:50%;
+    top:650%;
+    transform: translate(-50%, -50%);
+}
+.contentChunk {
+    margin-top: 80vh;
+    padding-top:5vh;
+    text-align: left;
+    font-size: 3vmin;
+}
+a {
+    text-decoration: none;
+    color:rgb(255, 0, 85);
+    transition:0.2s;
+}
+a:hover {
+    background-color:rgb(255, 0, 85);
+    color:white;
+}
+
+.portfolioImg {
+    width:20vmin;
+    height:20vmin;
+    margin-top:2vmin;
+    border:solid;
+    border-color:white;
+    border-width:3px;
+    aspect-ratio: auto;
+}
+
+.sectionEntry {
+    margin-bottom:2vh;
+    min-width: 20vw;
+}
+
+.portfolioSection {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    position:fixed;
+    bottom:1vmin;
+    left:1vmin;
+    font-size: 3vmin;
+}
+
+#expandedImageContainer {
+    position:fixed;
+    left:50%;
+    top:150%;
+    transform:translate(-50%, -50%);
+    z-index:2;
+    border:solid;
+    border-color:white;
+    border-width:3px;
+    width:90vmin;
+    transition:0.5s;
+}
+#expandedImage {
+    width:90vmin;
+}
+#closeImage {
+    position:fixed;
+    background-color: transparent;
+    color:white;
+    border:none;
+    top:0.5vmin;
+    right:1.5vmin;
+    font-size: 8vmin;
+    font-family: Josefin-Sans;
+    opacity:0.5;
+    transition:0.2s;
+}
+#closeImage:hover {
+    opacity:1
+}
+sub {
+    width:20vw;
+    padding-right:5vmin;
+    padding-top:5vmin;
+    padding-bottom:5vmin;
+}
+.imageTextPair {
+    display:flex;
+}
+
+canvas {
+    background-color: rgb(0, 0, 0);
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}

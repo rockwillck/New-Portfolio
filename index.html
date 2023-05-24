@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>William Choi-Kim</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="expandedImageContainer">
+        <img id="expandedImage" src="" alt="">
+        <button id="closeImage" onclick="hideImage()">x</button>
+    </div>
+    <div class="heading">
+        <h1>William Choi-Kim</h1>
+        <h3>Web Developer and Game Creator</h3>
+        <button class="scrollButton" onclick="scrollDown('about')">About Me</button>
+    </div>
+    <div class="content">
+        <div class="contentChunk" id="about">
+            <h2>About Me</h2>
+            <p>My name is William, and I have a passion for <u>web development</u> and <u>game programming</u>. </p>
+            <p>I discovered programming when I was 8, on a train and bored with nothing to do. Since then, I've trained in and built applications using <em>Javascript+HTML+CSS</em>, <em>SwiftUI</em>, and <em>Python</em>.</p>
+            <p>I have extensive experience with <b>3D rendering</b>, <b>HTML canvas</b>, <b>Web Workers</b>, <b>image manipulation using PIL</b>, and the <b>Discord API</b>.</p>
+            <button class="scrollButton" onclick="scrollDown('work')">My Work</button>
+        </div>
+        <div class="contentChunk" id="work">
+            <h2>My Work</h2>
+            <h3>Web Development</h3>
+            <div class="portfolioSection">
+                <div class="sectionEntry">
+                    <a href="https://www.secretio.net">Secretio.net</a>
+                    <br>
+                    <div class="imageTextPair">
+                        <sub>A web app built with Python Flask and HTML+Javascript that allows users to share their secrets anonymously, once per day.</sub>
+                        <br>
+                        <img src="images/secretio.png" alt="A screenshot of the interface of secretio, a secret sharing service." class="portfolioImg">
+                    </div>
+                </div>
+                <div class="sectionEntry">
+                    <a href="https://www.rockwill.dev/RT3dMetaballs">RT3dMetaballs</a>
+                    <br>
+                    <div class="imageTextPair">
+                        <sub>Real-time 3d metaballs, running in the browser client-side using Web Workers for multithreading, all only on the CPU - making it run even on phones and tablets.</sub>
+                        <br>
+                        <img src="images/metaballs.png" alt="Metaballs, visualized in the browser in real-time." class="portfolioImg">
+                    </div>
+                </div>
+            </div>
+            <h3>Games</h3>
+            <div class="portfolioSection">
+                <div class="sectionEntry">
+                    <a href="https://rockwillck.itch.io/flowerbed">A Quiet Flowerbed</a>
+                    <br>
+                    <div class="imageTextPair">
+                        <sub>A short but polished game about planting flowers and automating gardening. Built using only vanilla JS and HTML Canvas.</sub>
+                        <br>
+                        <img src="images/quiet_flowerbed.png" alt="Example of a scene from A Quiet Flowerbed." class="portfolioImg">
+                    </div>
+                </div>
+                <div class="sectionEntry">
+                    <a href="https://rockwillck.itch.io/the-bliss-pub">The Bliss Pub</a>
+                    <br>
+                    <div class="imageTextPair">
+                        <sub>A game made in a weekend for the Snappy Gurus game jam. Built using only vanilla JS and HTML Canvas.</sub>
+                        <br>
+                        <img src="images/bliss_pub.png" alt="Example of a scene from The Bliss Pub." class="portfolioImg">
+                    </div>
+                </div>
+            </div>
+            <h3>Python</h3>
+            <div class="portfolioSection">
+                <div class="sectionEntry">
+                    <a href="https://luka.sparkplug.page">Luka's Eyelashes</a>
+                    <br>
+                    <div class="imageTextPair">
+                        <sub>A verified Discord bot used by hundreds of servers and around 100,000 people.</sub>
+                        <img src="images/luka.png" alt="A picture of Luka, a widely-used Discord bot." class="portfolioImg">
+                    </div>
+                </div>
+            </div>
+            <button class="scrollButton" onclick="scrollDown('contact')" id="contactBtn">Contact Me</button>
+        </div>
+        <div class="contentChunk" id="contact">
+            <h2>Contact Me</h2>
+            <a class="contactLink" src="mailto:rockwill@rockwill.dev">Email [rockwill@rockwill.dev]</a>
+        </div>
+
+        <div class="contentChunk" id="spacer"></div>
+    </div>
+
+    <footer>
+        <small>© <script>document.write(new Date().getFullYear())</script> William Choi-Kim. All Rights Reserved.</small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
