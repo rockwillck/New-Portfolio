@@ -132,7 +132,7 @@ footer {
     opacity:1
 }
 sub {
-    width:20vw;
+    min-width:20vw;
     padding-right:5vmin;
     padding-top:5vmin;
     padding-bottom:5vmin;
