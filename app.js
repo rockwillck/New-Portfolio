@@ -34,7 +34,7 @@ function animate() {
     requestAnimationFrame(animate)
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
-    xDivisions = 200
+    xDivisions = 150
     yDivisions = canvas.height/canvas.width*xDivisions
     for (x=0;x<xDivisions;x++) {
         for (y=0;y<yDivisions;y++) {
