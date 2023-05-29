@@ -5,7 +5,7 @@
     <title>William Choi-Kim</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="I'm William Choi-Kim, and I'm a web developer with extensive experience using HTML rendering technologies and backend programming." />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="static/indexStyle.css" />
     <link rel="icon" href="favicon.png">
 </head>
 <body onresize="resize()">
@@ -17,7 +17,10 @@
     <div class="heading">
         <h1>William Choi-Kim</h1>
         <h2>Web Developer and Game Creator</h2>
-        <button id="headerScrollButton" class="scrollButton" onclick="scrollDown('about')">About Me</button>
+        <div class="headerButtons">
+            <button id="headerScrollButton" class="scrollButton" onclick="scrollDown('about')">About Me</button>
+            <a id="headerRedirect" href="/blog.html">My Blog</a>
+        </div>
     </div>
     <div class="content">
         <div class="contentChunk" id="about">

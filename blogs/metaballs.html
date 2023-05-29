@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Real-Time Metaballs | William Choi-Kim</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="I'm William Choi-Kim, and I'm a web developer with extensive experience using HTML rendering technologies and backend programming." />
+    <link rel="stylesheet" type="text/css" href="../static/blogStyle.css" />
+    <link rel="icon" href="favicon.png">
+</head>
+<body>
+    <h1>Rendering Metaballs in Real Time in the Browser</h1>
+    <a href="../blog.html">Back to blog</a>
+    <h2 class="author">William Choi-Kim, May 29</h2>
+    <p>Metaballs: goopy, gloopy, sticky metaballs. Implementations exist in the likes of Blender and ZBrush, but all of these implementations have tradeoffs. Either these metaballs are incredibly low-poly, and, in many cases, finicky, or they're incredibly computationally expensive and can only run on the best hardware.</p>
+    <h3>The Charge Method</h3>
+    <p>Most (3d) metaball implementations use SDF, or signed-distance fields to render their namesake shapes. There are a few big issues with this:</p>
+    <ol>
+        <li>SDF is expensive, and usually done in compute shaders. This means that low end hardware will struggle to keep up.</li>
+        <li>SDF is a <em>rendering</em> solution, which means that triangulating a metaballs model into a mesh later on is, though possible, hard.</li>
+    </ol>
+    <p>So, our method involves the use of charge equations - as in, physics equations that calculate the charge of a given point in space.</p>
+    <p>Then, we can inch along a ray from each pixel, much like SDF, and find the collective charge of a pixel (the sum of the charges of all the points on the ray we inched along for a pixel). If that collective charge is greater than a threshhold, then we draw that pixel. Otherwise, we don't. It's that simple!</p>
+    <p>There are a few advantages and disadvantages to this method.</p>
+    <p>Advantages:</p>
+    <ol>
+        <li>This method lends itself to much simpler (and less expensive) calculations.</li>
+        <li>The charge method is more easily triangulated using the marching cubes algorithm, since all we need to do is find the charge of each corner of a cube.</li>
+        <li>The charge method allows you to control the individual "goopiness" of objects, unlike SDF.</li>
+    </ol>
+    <p>Disadvantages:</p>
+    <ol>
+        <li>The charge method is harder to apply materials and lighting to.</li>
+        <li>The charge method requires a cutoff distance, which, while common in most SDF implementations, can generally be circumvented using that method.</li>
+    </ol>
+    <h3>Other Optimizations</h3>
+    <p>Of course, using the charge method alone doesn't make real-time metaballs possible. Instead, we need to rely on a variety of other factors to make everything come together cohesively.</p>
+    <h4>Multi-Threading using Web Workers</h4>
+    <p>The most significant optimization used in my implementation is using JavaScript Web Workers to handle different regions of the screen in parallel. This means that difference "sectors" don't need to be computed one after another, but rather can be computed all at once. Unfortunately, this does drive the cost of computation up - on lower-end devices, this can cause some heating and loud fans. The alternative, however, is an implementation that runs at 60 minutes a frame.</p>
+    <h4>Anti-aliasing</h4>
+    <p>To run on low-specs, even with multi-threading, my implementation needed to render (at most) 128 x 128 pixels. Actually rendered this way, however, the metaballs appear incredibly pixelated and nearly unreadable. The solution is simple: fade the pixels out as you get to the edge of the sphere. In other words, we're rendering the equivalent of a colored depth map.</p>
+    <h4>Baked Angles</h4>
+    <p>Two of the most expensive mathematical calculations needed in 3d rendering, in my experience, is square root and atan2. Thankfully, both of these operations can be pre-baked for each angle, since even with rotation, I can simply use a lookup table to find the current angle and just modify that. This means that instead of taking atan2 and then taking cos/sin, I simply take cos/sin.</p>
+    <h3>Demo</h3>
+    <p>You can play with the current state of this project <a href="https://www.rockwill.dev/RT3dMetaballs">here</a>.</p>
+</body>

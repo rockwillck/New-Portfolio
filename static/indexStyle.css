@@ -1,6 +1,6 @@
 @font-face {
     font-family: Josefin-Sans;
-    src: url(fonts/JosefinSans-VariableFont_wght.ttf);
+    src: url(../fonts/JosefinSans-VariableFont_wght.ttf);
 }
 
 body {
@@ -9,6 +9,12 @@ body {
     font-family: Josefin-Sans;
     font-size: 7vmin;
     color:white;
+}
+
+::selection {
+    background-color: rgb(255, 0, 85);
+    color:white;
+    -webkit-text-fill-color: white;
 }
 
 h1 {
@@ -34,10 +40,7 @@ h3 {
     padding:5vmin;
     border-width: 3px;
 }
-#headerScrollButton { 
-    font-size: 5vmin;
-}
-.scrollButton {
+.scrollButton, #headerRedirect {
     background-color: transparent;
     border:none;
     color:white;
@@ -50,11 +53,20 @@ h3 {
     padding:3vmin;
     border-width: 3px;
 }
-.scrollButton:hover {
+.headerButtons {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#headerScrollButton, #headerRedirect { 
+    font-size: 5vmin;
+    margin: 1vmin;
+}
+.scrollButton:hover, #headerRedirect:hover {
     background-color: white;
     color:black;
 }
-.scrollButton:active {
+.scrollButton:active, #headerRedirect:active {
     background-color: white;
     padding:3vmin;
 }
@@ -74,7 +86,6 @@ a {
     text-decoration: none;
     color:rgb(255, 0, 85);
     transition:0.2s;
-    padding-bottom:2vh;
 }
 a:hover {
     background-color:rgb(255, 0, 85);
