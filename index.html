@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <title>William Choi-Kim</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="" />
+    <meta name="description" content="I'm William Choi-Kim, and I'm a web developer with extensive experience using HTML rendering technologies and backend programming." />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="icon" href="favicon.png">
 </head>
-<body>
+<body onresize="resize()">
     <canvas id="canvas"></canvas>
     <div id="expandedImageContainer">
         <img id="expandedImage" src="" alt="">
@@ -16,20 +16,20 @@
     </div>
     <div class="heading">
         <h1>William Choi-Kim</h1>
-        <h3>Web Developer and Game Creator</h3>
-        <button class="scrollButton" onclick="scrollDown('about')">About Me</button>
+        <h2>Web Developer and Game Creator</h2>
+        <button id="headerScrollButton" class="scrollButton" onclick="scrollDown('about')">About Me</button>
     </div>
     <div class="content">
         <div class="contentChunk" id="about">
-            <h2>About Me</h2>
+            <h3>About Me</h3>
             <p>My name is William, and I have a passion for <u>web development</u> and <u>game programming</u>. </p>
             <p>I discovered programming when I was 6, on a train and bored with nothing to do. Since then, I've trained in and built applications using <em>Javascript+HTML+CSS</em>, <em>SwiftUI</em>, and <em>Python</em>.</p>
             <p>I have extensive experience with <b>3D rendering</b>, <b>HTML canvas</b>, <b>Web Workers</b>, <b>image manipulation using PIL</b>, and the <b>Discord API</b>.</p>
             <button class="scrollButton" onclick="scrollDown('work')">My Work</button>
         </div>
         <div class="contentChunk" id="work">
-            <h2>My Work</h2>
-            <h3>Web Development</h3>
+            <h3>My Work</h3>
+            <h4>Web Development</h4>
             <div class="portfolioSection">
                 <div class="sectionEntry">
                     <a href="https://www.secretio.net">Secretio.net</a>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <h3>Games</h3>
+            <h4>Games</h4>
             <div class="portfolioSection">
                 <div class="sectionEntry">
                     <a href="https://rockwillck.itch.io/flowerbed">A Quiet Flowerbed</a>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <h3>Python</h3>
+            <h4>Python</h4>
             <div class="portfolioSection">
                 <div class="sectionEntry">
                     <a href="https://luka.sparkplug.page">Luka's Eyelashes</a>
@@ -85,10 +85,11 @@
             <button class="scrollButton" onclick="scrollDown('contact')" id="contactBtn">Contact Me</button>
         </div>
         <div class="contentChunk" id="contact">
-            <h2>Contact Me</h2>
-            <a class="contactLink" src="mailto:williamck@rockwill.dev">Email [williamck@rockwill.dev]</a>
+            <h3>Contact Me</h3>
+            <a class="contactLink" href="mailto:williamck@rockwill.dev">Email [williamck@rockwill.dev]</a>
             <br>
-            <a class="contactLink" src="https://github.com/rockwillck">Github [@rockwillck]</a>
+            <br>
+            <a class="contactLink" href="https://github.com/rockwillck">Github [@rockwillck]</a>
         </div>
 
         <div class="contentChunk" id="spacer"></div>

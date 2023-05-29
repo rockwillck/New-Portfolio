@@ -7,7 +7,7 @@ body {
     background-color: rgb(0, 0, 0);
     text-align: center;
     font-family: Josefin-Sans;
-    font-size: 5vmin;
+    font-size: 7vmin;
     color:white;
 }
 
@@ -19,6 +19,9 @@ h1 {
     text-transform: uppercase;
 }
 h2 {
+    font-size:6vmin;
+}
+h3 {
     text-decoration: underline;
 }
 .heading {
@@ -31,17 +34,20 @@ h2 {
     padding:5vmin;
     border-width: 3px;
 }
+#headerScrollButton { 
+    font-size: 5vmin;
+}
 .scrollButton {
     background-color: transparent;
     border:none;
     color:white;
     font-family: Josefin-Sans;
-    font-size: 2vmin;
+    font-size: 3.5vmin;
     transition: 0.2s;
     text-transform: uppercase;
     border:solid;
     border-color: white;
-    padding:2vmin;
+    padding:3vmin;
     border-width: 3px;
 }
 .scrollButton:hover {
@@ -62,12 +68,13 @@ h2 {
     margin-top: 80vh;
     padding-top:5vh;
     text-align: left;
-    font-size: 3vmin;
+    font-size: 5vmin;
 }
 a {
     text-decoration: none;
     color:rgb(255, 0, 85);
     transition:0.2s;
+    padding-bottom:2vh;
 }
 a:hover {
     background-color:rgb(255, 0, 85);
@@ -75,7 +82,6 @@ a:hover {
 }
 
 .portfolioImg {
-    width:20vmin;
     height:20vmin;
     margin-top:2vmin;
     border:solid;
